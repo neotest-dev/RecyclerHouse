@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "914373409842",
+    "project_id": "recyclerhouse",
+    "storage_bucket": "recyclerhouse.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914373409842:android:98d011b5273f6e16fc902b",
+        "android_client_info": {
+          "package_name": "com.uct.recyclerhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914373409842-sgd7e0voiqfv9p1fr4cm5fej1lfg3naq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uct.recyclerhouse",
+            "certificate_hash": "127aa3f672d9934ec2d9c6a4efd38e228216d51a"
+          }
+        },
+        {
+          "client_id": "914373409842-f62d88tmnjopmn29ej9q1bkhdfbli097.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqojrFmDd5vwIuzUrAE08bzwW9DrqkQ4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914373409842-f62d88tmnjopmn29ej9q1bkhdfbli097.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

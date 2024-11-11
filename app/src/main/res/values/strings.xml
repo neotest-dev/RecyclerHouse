@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RecyclerHouse</string>
+    <string name="imagelogo">Logo app</string>
+    <string name="imagedesc1">desc1</string>
+    <string name="imagedesc2">desc2</string>
+    <string name="title">RecyclerHouse</string>
+    <string name="login_button">Iniciar sesión con Google</string>
+    <string name="default_web_client_id">914373409842-f62d88tmnjopmn29ej9q1bkhdfbli097.apps.googleusercontent.com</string>
+    <string name="floating_button">RecyclerHouse</string>
 </resources>
