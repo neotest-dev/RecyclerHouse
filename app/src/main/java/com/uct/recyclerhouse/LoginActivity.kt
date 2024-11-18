@@ -2,17 +2,18 @@
 
 package com.uct.recyclerhouse
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -61,6 +62,9 @@ class LoginActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+        val acceder = findViewById<Button>(R.id.accederbtn)
+        val emailEditText = findViewById<EditText>(R.id.emailEditText)
+        val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
 
         val loginButton = findViewById<Button>(R.id.loginButton)
         val btnUCT = findViewById<ImageButton>(R.id.btnUCT)
@@ -72,6 +76,92 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             signInWithGoogle()
         }
+
+        acceder.setOnClickListener {
+            val email = emailEditText.text.toString()
+            val password = passwordEditText.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                signIn(email, password)
+            } else {
+                Toast.makeText(this, "Rellene los campos", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val registrar = findViewById<Button>(R.id.btn_registrar)
+
+        registrar.setOnClickListener {
+            // Crear el dialogo emergente para registro
+            val dialogView = layoutInflater.inflate(R.layout.dialog_register, null)
+            val emailEdit = dialogView.findViewById<EditText>(R.id.dialogEmailEditText)
+            val passwordEdit = dialogView.findViewById<EditText>(R.id.dialogPasswordEditText)
+
+            // Crear el AlertDialog
+            val builder = AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
+                .setTitle("Registrar cuenta")
+                .setView(dialogView)
+                .setPositiveButton("Registrar") { _, _ ->
+                    val email = emailEdit.text.toString()
+                    val password = passwordEdit.text.toString()
+
+                    if (email.isNotEmpty() && password.isNotEmpty()) {
+                        createAccount(email, password)
+                    } else {
+                        Toast.makeText(this, "Por favor ingrese los campos completos", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .setNegativeButton("Cancelar", null)
+
+            builder.create().show()
+        }
+
+
+
+    }
+    private fun signIn(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "signInWithEmail:success")
+                    Toast.makeText(baseContext, "Bienvenido", Toast.LENGTH_SHORT).show()
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+                    // Aquí intentamos enviar un correo de restablecimiento de contraseña
+                    sendPasswordResetEmail(email)
+                    updateUI(null)
+                }
+            }
+    }
+
+    private fun sendPasswordResetEmail(email: String) {
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "Email sent.")
+                    Toast.makeText(baseContext, "Correo de restablecimiento enviado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.w(TAG, "sendPasswordResetEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Error al enviar el correo de restablecimiento", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun createAccount(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "createUserWithEmail:success")
+                    Toast.makeText(baseContext, "Bienvenido", Toast.LENGTH_SHORT).show()
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Usuario ya existente", Toast.LENGTH_SHORT).show()
+                    updateUI(null)
+                }
+            }
     }
 
     private fun signInWithGoogle() {
@@ -132,5 +222,9 @@ class LoginActivity : AppCompatActivity() {
         val url = "https://www.uct.edu.pe/"
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(intent)
+    }
+
+    companion object {
+        private const val TAG = "EmailPassword"
     }
 }

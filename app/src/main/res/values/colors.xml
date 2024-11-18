@@ -6,4 +6,5 @@
     <color name="verdeseve">#093B04</color>
     <color name="transparent">#00000000</color>
     <color name="red">#FF0000</color>
+    <color name="hint">#575757</color>
 </resources>
