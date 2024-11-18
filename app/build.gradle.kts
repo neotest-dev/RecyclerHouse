@@ -7,7 +7,9 @@ plugins {
 android {
     namespace = "com.uct.recyclerhouse"
     compileSdk = 34
-
+    viewBinding {
+        enable = true
+    }
     defaultConfig {
         applicationId = "com.uct.recyclerhouse"
         minSdk = 24
@@ -17,7 +19,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false

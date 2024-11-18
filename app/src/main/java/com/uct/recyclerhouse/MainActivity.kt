@@ -1,4 +1,5 @@
 @file:Suppress("DEPRECATION")
+
 package com.uct.recyclerhouse
 
 import android.content.Intent
@@ -7,13 +8,18 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.firebase.auth.FirebaseAuth
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
+import com.uct.recyclerhouse.adapter.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +50,22 @@ class MainActivity : AppCompatActivity() {
         salir.setOnClickListener {
             showAlert()
         }
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager2>(R.id.viewPager)
+        setSupportActionBar(toolbar)
+
+        val adapter = ViewPagerAdapter(this)
+        viewPager.adapter = adapter
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Guía"
+                1 -> "Centros"
+                2 -> "Educación"
+                else -> ""
+            }
+        }.attach()
     }
 
     private fun showAlert() {
