@@ -11,7 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/card_green"
         android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/localImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/desc5"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -23,6 +33,7 @@
                 android:id="@+id/centerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -30,13 +41,17 @@
                 android:id="@+id/centerDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginTop="4dp" />
         </LinearLayout>
 
-        <Button
+    <Button
             android:id="@+id/viewRouteButton"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:text="Ver ruta" />
+            android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+            android:text="@string/item_ver"/>
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

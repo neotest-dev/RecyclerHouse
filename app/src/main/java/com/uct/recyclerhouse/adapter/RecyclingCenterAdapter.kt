@@ -1,32 +1,46 @@
 package com.uct.recyclerhouse.adapter
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.uct.recyclerhouse.databinding.ItemRecyclingCenterBinding
 import com.uct.recyclerhouse.model.RecyclingCenter
 
-class RecyclingCenterAdapter(private val centers: List<RecyclingCenter>) : RecyclerView.Adapter<RecyclingCenterAdapter.ViewHolder>() {
+class RecyclingCenterAdapter(
+    private val centers: List<RecyclingCenter>
+) : RecyclerView.Adapter<RecyclingCenterAdapter.CenterViewHolder>() {
 
-    class ViewHolder(private val binding: ItemRecyclingCenterBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class CenterViewHolder(private val binding: ItemRecyclingCenterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
         fun bind(center: RecyclingCenter) {
+            // Asignar datos al layout
             binding.centerName.text = center.name
             binding.centerDistance.text = center.distance
+            binding.localImage.setImageResource(center.imageResId)
+
+            // Configurar botón para abrir Google Maps
             binding.viewRouteButton.setOnClickListener {
-                // Implementar la lógica para ver la ruta
+                val context: Context = it.context
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(center.googleMapsLink))
+                context.startActivity(intent)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemRecyclingCenterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CenterViewHolder {
+        val binding = ItemRecyclingCenterBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return CenterViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val center = centers[position]
-        holder.bind(center)
+    override fun onBindViewHolder(holder: CenterViewHolder, position: Int) {
+        holder.bind(centers[position])
     }
 
-    override fun getItemCount() = centers.size
+    override fun getItemCount(): Int = centers.size
 }
