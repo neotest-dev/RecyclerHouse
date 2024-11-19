@@ -11,18 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/card_green"
         android:padding="16dp">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="16dp"
+            android:contentDescription="@string/desc4"
             android:src="@drawable/ic_tip" />
 
         <TextView
             android:id="@+id/tipText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

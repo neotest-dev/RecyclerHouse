@@ -7,4 +7,5 @@
     <color name="transparent">#00000000</color>
     <color name="red">#FF0000</color>
     <color name="hint">#575757</color>
+    <color name="card_green">#9ACD32</color>
 </resources>

@@ -14,4 +14,13 @@
     <string name="btn_registrar">REGÍSTRATE</string>
     <string name="register_correo">Correo electrónico</string>
     <string name="register_password">Contraseña</string>
+    <string name="gu_a">Guía</string>
+    <string name="centros">Centros</string>
+    <string name="edu">Educación</string>
+    <string name="desc3">Educación</string>
+    <string name="desc4">Educación</string>
+    <string name="name_toolbar">RecyclerHouse</string>
+    <string name="item_ver">VER</string>
+    <string name="desc5">xd</string>
+    <string name="desc6">guia_pue</string>
 </resources>
