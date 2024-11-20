@@ -16,7 +16,7 @@ class GuideFragment : Fragment() {
     private var binding: FragmentGuideBinding? = null
 
     private val wasteTypes = listOf(
-        WasteType("Orgánico", "Restos de comida, cáscaras, etc.", R.drawable.ic_organic),
+        WasteType("Orgánicos", "Restos de comida, cáscaras, etc.", R.drawable.ic_organic),
         WasteType("Plástico", "Botellas, envases, bolsas", R.drawable.ic_plastic),
         WasteType("Vidrio", "Botellas, frascos", R.drawable.ic_glass),
         WasteType("Papel", "Periódicos, revistas, cajas", R.drawable.ic_paper),

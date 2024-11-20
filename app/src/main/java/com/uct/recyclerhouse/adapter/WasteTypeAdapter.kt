@@ -1,10 +1,11 @@
 package com.uct.recyclerhouse.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.uct.recyclerhouse.DetailActivity
 import com.uct.recyclerhouse.databinding.ItemWasteTypeBinding
 import com.uct.recyclerhouse.model.WasteType
 
@@ -20,8 +21,11 @@ class WasteTypeAdapter(
             binding.wasteTypeIcon.setImageResource(wasteType.iconResId)
             binding.wasteTypeName.text = wasteType.name
             binding.wasteTypeDescription.text = wasteType.description
+
             binding.main.setOnClickListener {
-                Toast.makeText(context, wasteType.name, Toast.LENGTH_LONG).show()
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("MESSAGE_KEY", wasteType.name)
+                context!!.startActivity(intent)
             }
         }
     }
