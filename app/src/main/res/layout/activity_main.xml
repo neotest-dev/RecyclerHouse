@@ -24,11 +24,11 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/logo"
                 android:contentDescription="@string/desc3"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -39,19 +39,19 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/logo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        style="@style/CustomTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:tabMode="fixed"
-        style="@style/CustomTabLayout">
+        app:tabMode="fixed">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -89,4 +89,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ImageContrastCheck" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
