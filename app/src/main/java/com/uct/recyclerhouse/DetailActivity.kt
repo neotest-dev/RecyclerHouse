@@ -1,5 +1,8 @@
+@file:Suppress("ConvertToStringTemplate", "MoveVariableDeclarationIntoWhen", "DEPRECATION")
+
 package com.uct.recyclerhouse
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +39,7 @@ class DetailActivity : AppCompatActivity() {
         loadDataFromFirestore()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun loadDataFromFirestore() {
         var messageChange = message.lowercase()
         messageChange = messageChange.replace("[áÁ]".toRegex(), "a")

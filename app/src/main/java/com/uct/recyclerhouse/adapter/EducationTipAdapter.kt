@@ -3,7 +3,6 @@ package com.uct.recyclerhouse.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.uct.recyclerhouse.R
 import com.uct.recyclerhouse.databinding.ItemEducationTipBinding
 
 class EducationTipAdapter(

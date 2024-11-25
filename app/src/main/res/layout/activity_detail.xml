@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -29,24 +31,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/card_green"
                 android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/todo"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/ic_launcher"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Información General"
+                        android:text="@string/informaci_n_general"
+                        android:textColor="@color/black"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
                 </LinearLayout>
 
@@ -55,8 +62,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
                     android:justificationMode="inter_word"
-                    android:textAppearance="?attr/textAppearanceBody2" />
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    tools:ignore="UnusedAttribute" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -71,24 +80,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/card_green"
                 android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/todo2"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_info" />
+                        android:src="@drawable/ic_info"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Tipos"
+                        android:text="@string/tipos"
+                        android:textColor="@color/black"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
                 </LinearLayout>
 
@@ -97,6 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -111,18 +126,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/todo3"
                 android:orientation="vertical"
+                android:background="@color/card_green"
                 android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_warning" />
+                        android:src="@drawable/ic_warning"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -130,7 +149,9 @@
                         android:layout_marginStart="10dp"
                         android:drawablePadding="8dp"
                         android:text="Precauciones"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
+                        android:textColor="@color/black"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <TextView
@@ -138,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -152,25 +174,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/todo4"
                 android:orientation="vertical"
+                android:background="@color/card_green"
                 android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_check_circle" />
+                        android:src="@drawable/ic_check_circle"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Beneficios"
+                        android:text="@string/beneficios"
+                        android:textColor="@color/black"
                         android:textAppearance="?attr/textAppearanceHeadline6" />
                 </LinearLayout>
 
@@ -179,6 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
                     android:textAppearance="?attr/textAppearanceBody2" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

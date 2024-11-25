@@ -23,4 +23,11 @@
     <string name="item_ver">VER</string>
     <string name="desc5">xd</string>
     <string name="desc6">guia_pue</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="informaci_n_general">Información General</string>
+    <string name="tipos">Tipos</string>
+    <string name="beneficios">Beneficios</string>
 </resources>

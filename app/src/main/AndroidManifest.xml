@@ -29,6 +29,11 @@
             android:theme="@style/SplashTheme"
             android:exported="true">
         </activity>
-    </application>
 
+        <!-- Agregar DetailActivity aquí -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true">
+        </activity>
+    </application>
 </manifest>
