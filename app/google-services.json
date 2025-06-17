@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "914373409842-sgd7e0voiqfv9p1fr4cm5fej1lfg3naq.apps.googleusercontent.com",
+          "client_id": "914373409842-n38l77mq766nhnln9hejjg64roen6kqa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.uct.recyclerhouse",
-            "certificate_hash": "127aa3f672d9934ec2d9c6a4efd38e228216d51a"
+            "certificate_hash": "ff0c0c37cafe1134c42be6a951b1906339cc9e11"
           }
         },
         {

@@ -200,7 +200,7 @@
         android:id="@+id/btnUCT"
         android:layout_width="140dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/imagedesc2"
         android:background="@drawable/button_border"
         android:scaleType="centerInside"

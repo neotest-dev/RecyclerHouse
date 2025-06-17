@@ -2,6 +2,7 @@
 
 package com.uct.recyclerhouse
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -218,6 +219,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("UseKtx")
     private fun pageUCT() {
         val url = "https://www.uct.edu.pe/"
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
