@@ -42,10 +42,15 @@ Si prefieres tener tu propio backend y no depender del autor, haz lo siguiente:
 
 ---
 
-## 🤝 Autores
+## 🤝 Desarrolladores
 
-Desarrollado por **neotest-dev** **Luis-tb** **diego**
-🔗 Portafolio: próximamente
+Proyecto creado por:
+
+👨‍💻 **neotest-dev**  
+👨‍💻 **Luis-tb**  
+👨‍💻 **diego**
+
+🔗 Portafolio: próximamente (uno por cada integrante)
 
 ---
 
