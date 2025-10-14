@@ -1,3 +1,5 @@
+@file:Suppress("VariableInitializerIsRedundant")
+
 package com.uct.recyclerhouse.ui
 
 import android.os.Bundle

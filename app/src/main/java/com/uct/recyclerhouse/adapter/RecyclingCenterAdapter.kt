@@ -1,5 +1,6 @@
 package com.uct.recyclerhouse.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -16,6 +17,7 @@ class RecyclingCenterAdapter(
     inner class CenterViewHolder(private val binding: ItemRecyclingCenterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("UseKtx")
         fun bind(center: RecyclingCenter) {
             // Asignar datos al layout
             binding.centerName.text = center.name
