@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.uct.recyclerhouse" />
+                  <option name="mobileSdkAppId" value="1:914373409842:android:98d011b5273f6e16fc902b" />
+                  <option name="projectId" value="recyclerhouse" />
+                  <option name="projectNumber" value="914373409842" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
